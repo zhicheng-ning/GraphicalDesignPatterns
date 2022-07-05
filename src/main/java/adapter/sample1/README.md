@@ -29,7 +29,34 @@ sample1 是一段使用继承的适配器是示例程序，它会将输入的字
 | 变换装置 | 适配器        | PrintBanner 类 （extends Banner，implements Print） |
 | 需求     | 直流 12 伏特  | Print 接口（printWeak、printStrong）                |
 
-> 小结
+# 类图
+```mermaid
+classDiagram
+class Main
+
+class Print {
+<<interface>>
++printWeak()* void
++printStrong()* void
+}
+
+class PrintBanner {
++printWeak() void
++printStrong() void
+}
+
+class Banner {
++showWithParen() void
++showWithAster() void
+}
+
+Banner <|-- PrintBanner
+Print <|.. PrintBanner
+Print <-- Main:Uses
+```
+
+
+# 小结
 > ```text
 > 对于 Main 类的代码来说，Banner 类、showWithParen 方法和 showWithAster 方法被完全隐藏起来了。这
 > 就好像笔记本只要在直流电 12 伏特下就能正常工作，但它不知道这 12 伏特的电压是由适配器将 100 伏特交流电
