@@ -13,7 +13,7 @@ public abstract class AbstractDisplay {
 
     public abstract void close();
 
-    public void display() {
+    public final void display() {
         open();
         for (int i = 0; i < 5; i++) {
             print();
