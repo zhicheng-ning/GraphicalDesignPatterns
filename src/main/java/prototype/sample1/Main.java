@@ -21,9 +21,9 @@ public class Main {
         manager.register("slash box", sBox);
 
         //使用
-        Product p1 = manager.createClone("strong message");
-        Product p2 = manager.createClone("warning box");
-        Product p3 = manager.createClone("slash box");
+        Product p1 = manager.create("strong message");
+        Product p2 = manager.create("warning box");
+        Product p3 = manager.create("slash box");
 
         p1.use("Hello World.");
         p2.use("Hello World.");

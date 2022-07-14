@@ -16,7 +16,7 @@ public class Manager {
         showcase.put(name, proto);
     }
 
-    public Product createClone(String protoName) {
+    public Product create(String protoName) {
         Product p = showcase.get(protoName);
         return p.createClone();
     }
